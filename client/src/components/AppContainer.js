@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "../components/Home"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import DropdownMenu from '../pages/DropdownMenu';
 import Isabella from '../pages/IsabellaSaracini'
 import Kamryn from '../pages/KamrynHarmeling'
 import Kris from '../pages/KrisDegirolamo'
 import Nicholas from '../pages/NicholasRiley'
+import { AppContextProvider } from '../libs/appContext';
 
 
 
@@ -21,9 +21,9 @@ function AppContainer() {
   return (
     <div>
     <Router>
+      <AppContextProvider>
       <div className="flex-column justify-flex-start min-100-vh">
         <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-        <DropdownMenu /> 
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -35,7 +35,7 @@ function AppContainer() {
         </div>
         <Footer currentPage={currentPage} handlePageChange={handlePageChange} />
       </div>
-     
+      </AppContextProvider> 
     </Router>
   
      </div>

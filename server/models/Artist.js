@@ -7,7 +7,7 @@ const artistSchema = new Schema({
     required: true,
     trim: true,
   },
-  art: [artSchema]
+  // art: [artSchema]
   
   // comments: [
   //   {

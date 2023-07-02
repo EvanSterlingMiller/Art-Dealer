@@ -3,7 +3,7 @@ const { Artist } = require('./Artist')
 const dateFormat = require('../utils/dateFormat');
 
 const artSchema = new Schema({
-    artist: [Artist],
+    // artist: [Artist],
     id: {
         type: Number,
         required: true

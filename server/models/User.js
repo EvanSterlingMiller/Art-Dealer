@@ -27,7 +27,7 @@ const userSchema = new Schema({
   //   },
     
   // ],
-  purchasedArt: [artSchema],
+  // purchasedArt: [artSchema],
   firstName:{
     type: String,
     required: true,
