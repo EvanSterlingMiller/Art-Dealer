@@ -1,8 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+const style = {
+    'font-family': 'Roboto Mono',
+    'textDecoration': 'none',
+    'padding': '10px',
+}
 
-function Header({currentPage, handlePageChange}) {
+function Header({ currentPage, handlePageChange }) {
     return (
         <header>
         
