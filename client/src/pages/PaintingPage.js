@@ -2,9 +2,8 @@ import React from 'react';
 import DisplayCard from './DisplayCard'
 import '../Styles/ArtistsPages.css'
 
-function NicholasRiley() {
-   const artistName = 'Nicholas Riley';
-   const artistDescription = 'This is a brief description of the artist Nicholas Riley.';
+function Painting() {
+   const medium = 'Painting';
    const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
    const createRows = (cardsPerRow) => {
@@ -30,12 +29,11 @@ function NicholasRiley() {
    return (
       <div className='art-cards-container'>
          <div className='artist-info'>
-            <h2>{artistName}</h2>
-            <p>{artistDescription}</p>
+            <h2>{medium}</h2>
          </div>
          {createRows(3)}
       </div>
    );
 }
 
-export default NicholasRiley; 
+export default Painting; 
