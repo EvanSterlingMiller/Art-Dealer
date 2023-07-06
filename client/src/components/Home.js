@@ -17,6 +17,7 @@ const slideImages = [
   },
   
 ];
+
 function Home() {
     return (
  <div className="home-body">

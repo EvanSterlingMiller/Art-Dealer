@@ -2,7 +2,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
 import Home from "./Home"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -23,7 +22,6 @@ const style = {
     display: 'flex'
   }
 }
-
 
 
 function AppContainer() {

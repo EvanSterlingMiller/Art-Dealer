@@ -7,12 +7,16 @@ const artistSchema = new Schema({
     required: true,
     trim: true,
   },
+<<<<<<< HEAD
+  // art: [artSchema]
+=======
   art: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: artSchema
     }
   ]
+>>>>>>> d2c3ecfcadcbaf8c075a5285e89033da251ce48c
   
   // comments: [
   //   {

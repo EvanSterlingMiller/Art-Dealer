@@ -26,6 +26,10 @@ const typeDefs = gql`
     _id: ID!
     artist: String!
     art: [Art]
+<<<<<<< HEAD
+    
+=======
+>>>>>>> d2c3ecfcadcbaf8c075a5285e89033da251ce48c
   }
 
   type Query {
