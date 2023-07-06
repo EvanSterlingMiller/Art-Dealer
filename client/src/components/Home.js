@@ -2,7 +2,21 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
-import DisplayCard from '../components/pages/DisplayCard'
+const slideImages = [
+  {
+    url: 'https://i.imgur.com/AaZfrNc.png',
+  },
+  {
+    url: 'https://i.imgur.com/u90zFUU.jpg',
+  },
+  {
+    url: 'https://i.imgur.com/sAgUl83.png',
+  },
+  {
+    url: 'https://i.imgur.com/62jjyL3.png',
+  },
+  
+];
 
 function Home() {
     return (
@@ -17,9 +31,6 @@ function Home() {
       </Slide>
     </div>
 
-            HOME PAGE 
-          {/*   temporary placement of displaycard component until routes work */}
-      <DisplayCard />
         </div>
     );
 }
