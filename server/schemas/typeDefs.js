@@ -14,11 +14,11 @@ const typeDefs = gql`
   type Art {
     _id: ID!
     title: String!
-    year: Date
+    year: String
     description: String!
     imageUrl: String!
-    price: Number!
-    createdAt: Date
+    price: Int!
+    createdAt: String
     artist: [Artist]
   }
 
@@ -26,7 +26,10 @@ const typeDefs = gql`
     _id: ID!
     artist: String!
     art: [Art]
+<<<<<<< HEAD
     
+=======
+>>>>>>> d2c3ecfcadcbaf8c075a5285e89033da251ce48c
   }
 
   type Query {
@@ -36,14 +39,21 @@ const typeDefs = gql`
     singleArtwork(artId: ID!): Artist
     users: [User]
     user(username: String!): User
-
   }
 
   type Mutation {
-    addArtist(artistName: String!, art: [Art]): Artist
-    addArt(artistId: ID!, title: String!, year: Date, description: String!, imageUrl: String!, price: String!): Artist
+    addArtist(artistName: String!, art: [String]): Artist
+    addArt(
+      artistId: ID!
+      title: String!
+      year: String
+      description: String!
+      imageUrl: String!
+      price: String!
+    ): Artist
     removeArtist(artistId: ID!): Artist
     removeArt(artistId: ID!, artId: ID!): Artist
+    addUser(username: String!, email: String!, password: String!): User
   }
 `;
 

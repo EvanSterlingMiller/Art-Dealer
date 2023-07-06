@@ -10,7 +10,6 @@ const style = {
 function Header({ currentPage, handlePageChange }) {
     return (
         <header>
-<<<<<<< HEAD
         
             <div className='header_left'>
         
@@ -18,39 +17,30 @@ function Header({ currentPage, handlePageChange }) {
     
             </div>
         
-=======
-function Header({ currentPage, handlePageChange }) {
-    return (
-        <header>
-            <div>
-             <Link to="/Home" style={style}>Artly</Link>
-             <Link to="/Login" style={style}>Login</Link>   
-            </div>
-
-            <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-            <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500" rel="stylesheet"></link>
-
->>>>>>> fe988e8960a4209966b86d56cbfbbf6ef04b7d8b
             <div className='header_center'>
 
-                {/* Space Bar */}
-            
+                {/* Search bar? */}
+
             </div>
 
             <div className='header_right'>
+
+                <button>
+                    Login
+                </button>
+
+                <button>
+                    Sign up
+                </button>
                 
-                {/* Drop Downmenu */}
-                {/* avatar */}
-
-            </div>
+                <nav>
+                    {/* dropdown */}
+                </nav>    
+            
+            </div>    
         
-        
-<<<<<<< HEAD
 
 
-=======
->>>>>>> fe988e8960a4209966b86d56cbfbbf6ef04b7d8b
         </header>
 
 
