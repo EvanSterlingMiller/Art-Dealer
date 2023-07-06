@@ -27,10 +27,6 @@ const userSchema = new Schema({
   //   },
 
   // ],
-<<<<<<< HEAD
-  // purchasedArt: [artSchema],
-  firstName:{
-=======
   purchasedArt: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -38,7 +34,6 @@ const userSchema = new Schema({
     }
   ],
   firstName: {
->>>>>>> d2c3ecfcadcbaf8c075a5285e89033da251ce48c
     type: String,
     required: true,
     trim: true,
