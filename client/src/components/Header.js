@@ -28,8 +28,6 @@ function Header({ currentPage, handlePageChange }) {
                 
                 <Link to="/Login" style={style}>Login</Link>
                 <Link to="/Cart" style={style}>Cart</Link>
-                
-                {/* Drop dwon menu */}
             
             </div>
 
