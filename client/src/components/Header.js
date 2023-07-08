@@ -16,7 +16,7 @@ function Header({ currentPage, handlePageChange }) {
                 <div className='header_left'>
         
                     <Link to="/Home">Artly</Link>
-                    <Link to="/Contact" style={style}> Contact Us</Link>
+                   
             
                 </div>
             
@@ -30,6 +30,7 @@ function Header({ currentPage, handlePageChange }) {
                     
                     <Link to="/Login" style={style}>Login</Link>
                     <Link to="/Cart" style={style}>Cart</Link>
+                    <Link to="/Contact" style={style}> Contact Us</Link>
             
                 </div>
             </div>
