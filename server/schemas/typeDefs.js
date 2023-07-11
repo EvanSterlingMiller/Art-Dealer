@@ -6,32 +6,34 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
-    password: String!
+    
     firstName: String!
     lastName: String!
   }
 
   type Art {
     _id: ID!
+    artist: [Artist]
     title: String!
     year: String
     description: String!
     imageUrl: String!
+    size: String
     price: Int!
     createdAt: String
-    artist: [Artist]
   }
 
   type Artist {
     _id: ID!
-    artist: String!
+    artistName: String!
     art: [Art]
   }
 
   type Query {
     artists: [Artist]!
     artist(artistId: ID!): Artist
-    art: [Art]!
+    artistByName(artistName: String!): Artist
+    art: [Art]
     singleArtwork(artId: ID!): Artist
     me: User
     users: [User]
@@ -50,8 +52,8 @@ const typeDefs = gql`
     ): Artist
     removeArtist(artistId: ID!): Artist
     removeArt(artistId: ID!, artId: ID!): Artist
-    login(email: String!, password: String!): Auth
-    addUser(firstname: String!, lastname:String!, username: String!, email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
+    addUser(firstName: String!, lastName:String!, username: String!, email: String!, password: String!): Auth
     
   }
   type Auth {
