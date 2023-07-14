@@ -15,6 +15,10 @@ const MediumMenu = () => {
     cursor: 'pointer',
   };
 
+  const mediumName = {
+    'color': 'black',
+  }
+
   const dropdownStyle = {
     position: 'relative',
   };
@@ -42,13 +46,13 @@ const MediumMenu = () => {
       <div className="dropdown-menu" style={menuStyle}>
         <ul>
           <Link to="/SculptingPage">
-            <li>Sculpture</li>
+            <li style={mediumName}>Sculpture</li>
           </Link>
           <Link to="/PaintingPage">
-            <li>Painting</li>
+            <li style={mediumName}>Painting</li>
           </Link>
           <Link to="/DigitalArtPages">
-            <li>Digital Art</li>
+            <li style={mediumName}>Digital Art</li>
           </Link>
         </ul>
       </div>

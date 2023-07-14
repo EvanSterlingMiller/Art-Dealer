@@ -59,6 +59,7 @@ console.log(props.imgUrl)
       <div className="card">
         <div className="extra-container">
         <div className="card-body">
+          <div className="image-container">
           <img className="card-img" src={props.imgUrl} alt="Artwork" />
         <h5 className="card-title"> {props.title}</h5>
         <p className="card-text">{props.year}</p>
@@ -69,6 +70,7 @@ console.log(props.imgUrl)
   Add to Cart
 </button>
           </div>
+        </div>
         </div>
       </div>
     </div>
