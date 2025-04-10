@@ -66,7 +66,7 @@ const showPurchaseHistory = async (req, res) => {
 
 // Helper function to generate a token
 const generateToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  return jwt.sign({ userId }, 'my-secret-key', { expiresIn: '1h' });
 };
 
 module.exports = {
@@ -74,5 +74,5 @@ module.exports = {
   createUser,
   loginUser,
   showPurchaseHistory,
-  generateToken
+  
 };
