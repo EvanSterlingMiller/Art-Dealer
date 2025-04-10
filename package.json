@@ -1,6 +1,6 @@
 {
     "name": "art-dealer",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An application for buying and selling art",
     "main": "server/index.js",
     "scripts": {
@@ -37,13 +37,14 @@
         "connect-mongo": "^4.6.0",
         "core-js": "^3.26.0",
         "date-fns": "^2.29.3",
+        "dotenv": "^16.4.7",
         "express": "^4.18.2",
         "express-session": "^1.17.3",
         "history": "^5.3.0",
         "immutability-helper": "^3.1.1",
         "json-style-converter": "^1.0.3",
         "jwt-decode": "^3.1.2",
-        "mongoose": "^6.6.7",
+        "mongoose": "6.13.6",
         "passport": "^0.6.0",
         "passport-local": "^1.0.0",
         "prop-types": "^15.8.1",
