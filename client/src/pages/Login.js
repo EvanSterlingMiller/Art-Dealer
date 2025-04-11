@@ -11,18 +11,21 @@ function Login(props) {
     const handleSwitchForm = (form) => {
         setActiveForm(form);
     };
-    //   const handleSwitchForm = () => {
-    //     setIsLogin(!isLogin);
-    //     setValidated(false);
-    //     setShowAlert(false);
-    // };
+    const safeInputRegex = /^[a-zA-Z0-9@._-]*$/
+
+    const isInputSafe = (input) => safeInputRegex.test(input)
+
 
     //for signup
     const [addUser] = useMutation(ADD_USER);
 
     const handleSignUpSubmit = async (event) => {
         event.preventDefault();
-        console.log(event, userFormData);
+        
+        if (!isInputSafe(userFormData.email) || !isInputSafe(userFormData.password)) {
+            alert('Invalid input detected. Please remove special characters.')
+            return;
+        }
         const mutationResponse = await addUser({
             variables: {
                 email: userFormData.email,
@@ -32,7 +35,7 @@ function Login(props) {
                 username: userFormData.username,
             },
         });
-        console.log(mutationResponse);
+        
         const token = mutationResponse.data.addUser.token;
     
         AuthService.login(token);
@@ -40,22 +43,32 @@ function Login(props) {
 
     const handleSignUpChange = (event) => {
         const { name, value } = event.target;
-        console.log({name,value});
-        setUserFormData({
-            ...userFormData,
-            [name]: value,
-        });
+        if (isInputSafe(value)) {
+            setUserFormData({
+                ...userFormData,
+                [name]: value,
+            });
+
+        } else {
+            alert('Invalid input detected. Please use only allowed characters.')
+        }
+        
 
     };
 
-    // code for login
+
     const [loginUser, ] = useMutation(LOGIN_USER);
-    // const [validated] = useState(false);
-    // const [showAlert, setShowAlert] = useState(false);
+  
 
     const handleLoginSubmit = async (event) => {
         event.preventDefault();
-        console.log(event, userFormData);
+        
+
+        if (!isInputSafe(userFormData.email) || !isInputSafe(userFormData.password)) {
+            alert('Invalid input detected. Please remove special characters.')
+            return;
+        }
+
         try {
             
           const mutationResponse = await loginUser({
@@ -69,123 +82,25 @@ function Login(props) {
           AuthService.login(token);
         } catch (e) {
           console.log(e);
-        //   setShowAlert(true);
+        
         }
       };
       const handleLoginChange = (event) => {
         const { name, value } = event.target;
-        console.log({name,value});
-        setUserFormData({
-          ...userFormData,
-          [name]: value,
-        });
+        if (isInputSafe(value)) {  
+            setUserFormData({
+            ...userFormData,
+            [name]: value,
+            });
+        } else {
+            alert('Invalid input detected. Please use only allowed characters.')
+        }
+
+        
       };
     
 
-    // const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-    // const [validated, setValidated] = useState(false);
-    // const [showAlert, setShowAlert] = useState(false);
-    // const [isLogin, setIsLogin] = useState(true);
-    // const [loginUser,] = useMutation(LOGIN_USER);
-
-
-
-    // const handleInputChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setUserFormData({ ...userFormData, [name]: value });
-    // };
-
-
-
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-
-    //     const form = event.currentTarget;
-    //     if (form.checkValidity() === false) {
-    //         event.stopPropagation();
-    //     }
-
-    //     setValidated(true);
-
-    //     try {
-    //         let { data } = null;
-
-    //         if (isLogin) {
-    //             data = await loginUser({
-    //                 variables: userFormData,
-    //             });
-    //         } else {
-    //             data = await addUser({
-    //                 variables: userFormData,
-    //             });
-    //         }
-
-    //         AuthService.login(data.login.token);
-    //     } catch (err) {
-    //         console.error(err);
-    //         setShowAlert(true);
-    //     }
-
-    //     setUserFormData({
-    //         email: "",
-    //         password: "",
-    //     });
-    //     // Add your login or signup logic here
-    //     //code for signup
-    //     const handleFormSubmit = async (event) => {
-    //         event.preventDefault();
-    //         const mutationResponse = await addUser({
-    //             variables: {
-    //                 email: userFormData.email,
-    //                 password: userFormData.password,
-    //                 firstName: userFormData.firstName,
-    //                 lastName: userFormData.lastName,
-    //                 username: userFormData.username,
-    //             },
-    //         });
-    //         const token = mutationResponse.data.addUser.token;
-    //         AuthService.login(token);
-    //     };
-
-    //     const handleChange = (event) => {
-    //         const { name, value } = event.target;
-    //         setUserFormData({
-    //             ...userFormData,
-    //             [name]: value,
-    //         });
-    //     };
-    // const handleFormSubmit = async (event) => {
-    //     event.preventDefault();
-
-    //     const form = event.currentTarget;
-    //     if (form.checkValidity() === false) {
-    //       event.stopPropagation();
-    //     } setValidated(true);
-
-    //     try {
-    //       let { data } = null;
-
-    //       if (isLogin) {
-    //         data = await loginUser({
-    //           variables: userFormData,
-    //         });
-    //       } else {
-    //         data = await addUser({
-    //           variables: userFormData,
-    //         });
-    //       }
-
-    //       AuthService.login(data.login.token);
-    //     } catch (err) {
-    //       console.error(err);
-    //       setShowAlert(true);
-    //     }
-
-    //     setUserFormData({
-    //       email: "",
-    //       password: "",
-        // };
+    
 
     return (
         <div className="container">
